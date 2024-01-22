@@ -1,0 +1,75 @@
+image: node:16-alpine
+
+stages:
+  - prepare
+  - lint
+  - build
+  - deploy
+
+.npm:
+  cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - .npm/
+  before_script:
+    - rm .npmrc
+    - echo "registry=https://repo.mypvp.me/repository/npm/" > ".npmrc"
+    - echo "always-auth=true" >> ".npmrc"
+    - echo "//repo.mypvp.me/repository/npm/:_authToken=$NPM_AUTH_TOKEN" >> ".npmrc"
+    - npm ci --cache .npm --prefer-offline
+
+install-npm-packages:
+  stage: prepare
+  extends: .npm
+  script:
+    - echo "Done"
+
+eslint:
+  extends: .npm
+  stage: lint
+  script:
+    - npm run lint:check
+  except:
+    - master
+    - tags
+
+prettier:
+  extends: .npm
+  stage: lint
+  script:
+    - npm run format:check
+  except:
+    - master
+    - tags
+
+build-image:
+  stage: build
+  image: docker:latest
+  script:
+    - docker login -u $MYPVP_REPO_USER -p $MYPVP_REPO_PASS docker-registry.mypvp.me
+    - docker build . -t docker-registry.mypvp.me/userserver-panel:$CI_COMMIT_REF_SLUG --build-arg NPM_MAIL=$NPM_MAIL --build-arg NPM_AUTH_TOKEN=$NPM_AUTH_TOKEN
+  tags:
+    - userserver-api
+  except:
+    - master
+    - tags
+
+build-image-dev:
+  stage: build
+  image: docker:latest
+  script:
+    - docker login -u $MYPVP_REPO_USER -p $MYPVP_REPO_PASS docker-registry.mypvp.me
+    - docker build . -t docker-registry.mypvp.me/userserver-panel:$CI_COMMIT_REF_SLUG --build-arg NPM_MAIL=$NPM_MAIL --build-arg NPM_AUTH_TOKEN=$NPM_AUTH_TOKEN
+    - docker push docker-registry.mypvp.me/userserver-panel:$CI_COMMIT_REF_SLUG
+  tags:
+    - userserver-api
+  only:
+    - master
+
+deploy-master:
+  stage: deploy
+  image: "curlimages/curl"
+  only:
+    - master
+  script:
+    - 'curl -H "CF-Access-Client-Id: $CF_ACCESS_CLIENT" -H "CF-Access-Client-Secret: $CF_ACCESS_SECRET" -X POST https://admin.mypvp.me/portainer/api/webhooks/c71e962e-58b7-4bb8-90e7-d4973d172285'

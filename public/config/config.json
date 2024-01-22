@@ -1,0 +1,10 @@
+{
+  "API_URL": "http://localhost:3000/userservers",
+  "BASE_API_URL": "https://api.mypvp.dev",
+  "API_UPLOAD_URL": "http://localhost:3000/userservers/__server_id__/files/upload",
+  "API_SERVER_ICON_URL": "http://localhost:3000/userservers/__server_id__/files/server-icon",
+  "API_SOCKET_PATH": "/userservers/socket",
+  "API_SOCKET_URL": "http://localhost:3000/",
+  "OAUTH_ISSUER": "https://auth.mypvp.me",
+  "DARK_COOKIE_DOMAIN": "localhost"
+}

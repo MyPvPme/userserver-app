@@ -1,0 +1,28 @@
+{
+  "file": "bukkit.yml",
+  "type": "yaml",
+  "from": "server",
+  "fileVersions": [
+    {
+      "supportedVersions": "spigot-1.+",
+      "values": [
+        {
+          "path": "settings.allow-end",
+          "type": "boolean"
+        },
+        {
+          "path": "ticks-per.animal-spawns",
+          "type": "number"
+        },
+        {
+          "path": "ticks-per.monster-spawns",
+          "type": "number"
+        },
+        {
+          "path": "ticks-per.autosave",
+          "type": "number"
+        }
+      ]
+    }
+  ]
+}

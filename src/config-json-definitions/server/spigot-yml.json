@@ -1,0 +1,24 @@
+{
+  "file": "spigot.yml",
+  "type": "yaml",
+  "from": "server",
+  "fileVersions": [
+    {
+      "supportedVersions": "spigot-1.+",
+      "values": [
+        {
+          "path": "settings.debug",
+          "type": "boolean"
+        },
+        {
+          "path": "settings.timeout-time",
+          "type": "number"
+        },
+        {
+          "path": "messages.whitelist",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

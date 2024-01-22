@@ -1,0 +1,72 @@
+{
+  "file": "server.properties",
+  "type": "properties",
+  "from": "server",
+  "fileVersions": [
+    {
+      "supportedVersions": "spigot-1.+",
+      "values": [
+        {
+          "path": "spawn-protection",
+          "type": "number"
+        },
+        {
+          "path": "server-name",
+          "type": "string"
+        },
+        {
+          "path": "white-list",
+          "type": "boolean"
+        },
+        {
+          "path": "pvp",
+          "type": "boolean"
+        },
+        {
+          "path": "gamemode",
+          "type": "survival"
+        },
+        {
+          "path": "enable-command-block",
+          "type": "boolean"
+        },
+        {
+          "path": "generate-structures",
+          "type": "boolean"
+        },
+        {
+          "path": "difficulty",
+          "type": "string"
+        },
+        {
+          "path": "require-resource-pack",
+          "type": "boolean"
+        },
+        {
+          "path": "allow-nether",
+          "type": "boolean"
+        },
+        {
+          "path": "resource-pack=",
+          "type": "string"
+        },
+        {
+          "path": "hardcore",
+          "type": "boolean"
+        },
+        {
+          "path": "white-list",
+          "type": "boolean"
+        },
+        {
+          "path": "spawn-npcs",
+          "type": "boolean"
+        },
+        {
+          "path": "spawn-animals",
+          "type": "boolean"
+        }
+      ]
+    }
+  ]
+}

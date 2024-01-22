@@ -1,0 +1,197 @@
+.minecraft-chat-render-bold {
+  font-weight: bold;
+}
+
+.minecraft-chat-default-font {
+  font-family: 'Minecraft Regular';
+}
+
+.minecraft-chat-strikethrough{
+  text-decoration: line-through;
+}
+
+.minecraft-chat-underlined{
+  border-bottom: solid 1px black;
+}
+
+.minecraft-chat-italic{
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Minecraft Regular';
+  src: url(./fonts/Minecraft_Regular.woff);
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 100;
+  src: url(./fonts/NotoSans-Thin.ttf);
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 300;
+  src: url(./fonts/NotoSans-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  src: url(./fonts/NotoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 500;
+  src: url(./fonts/NotoSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  src: url(./fonts/NotoSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 900;
+  src: url(./fonts/NotoSans-ExtraBold.ttf);
+}
+
+body {
+  font-family: Noto Sans,Arial,Helvetica,sans-serif;
+  overflow-y: scroll;
+  background-color: #f7f7f7;
+}
+
+.mypvp-layout-boundary{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+  padding: 0 20px;
+}
+
+.q-page {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-transform: uppercase;
+}
+
+h4, h5, h6 {
+  font-weight: 200;
+}
+
+.mypvp-external-link:hover {
+  text-decoration: underline;
+}
+
+.mypvp-card-animation {
+  transition: transform .2s,background-color .1s
+}
+
+.mypvp-card-animation:hover {
+  transform: scale(1.01);
+}
+
+// Change text color
+body {
+  color: $text-color--light;
+}
+
+.mypvp-separator {
+  background-color: $text-color--light;
+}
+
+.mypvp-text-color {
+  color: $text-color--light;
+}
+
+.mypvp-external-link {
+  text-decoration: none;
+  color: $text-color--light;
+}
+
+.q-table__card {
+  color: $text-color--light;
+}
+
+.text-default {
+  color: $text-color--light;
+}
+
+// Light
+.body--light{
+
+  &:not([class*="text-"]) {
+    color: $text-color--light;
+  }
+
+}
+
+// Dark
+.body--dark {
+
+  body {
+    color: $text-color--dark;
+  }
+
+  .q-table__card {
+    color: $text-color--dark;
+  }
+
+  &:not([class*="text-"]) {
+    color: $text-color--dark;
+  }
+
+  .mypvp-separator {
+    background-color: $text-color--dark;
+  }
+
+  .mypvp-text-color {
+    color: $text-color--dark;
+  }
+
+  .mypvp-text-color i {
+    color: $text-color--dark;
+  }
+
+  .mypvp-external-link {
+    color: $text-color--dark;
+  }
+
+  .text-default {
+    color: $text-color--dark;
+  }
+}
+
+// Editor
+.monaco-editor .scroll-decoration {
+  box-shadow: none!important;
+}
+
+.text-premium {
+  color: #FFAA00 !important;
+}
+
+.bg-premium {
+  background-color: #FFAA00 !important;
+}
+
+.text-legend {
+  color: #FFFF55 !important;
+}
+
+.bg-legend {
+  background-color: #FFFF55 !important;
+}
